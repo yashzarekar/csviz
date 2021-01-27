@@ -78,7 +78,6 @@ idna==2.10==py_0
 imageio==2.9.0==py_0
 imagesize==1.2.0==py_0
 importlib-metadata==2.0.0==py_1
-importlib_metadata==2.0.0==1
 iniconfig==1.1.1==py_0
 intel-openmp==2020.2==254
 intervaltree==3.1.0==py_0
