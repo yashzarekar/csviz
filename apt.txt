@@ -1,1 +1,1 @@
-slycot
+sudo apt-get install gfortran
