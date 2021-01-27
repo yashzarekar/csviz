@@ -23,7 +23,6 @@ jupyterlab==2.2.6
 jupyterlab_pygments==0.1.2
 jupyterlab_server==1.2.0
 matplotlib==3.3.2
-matplotlib-base==3.3.2
 numpy==1.19.2
 numpy-base==1.19.2
 numpydoc==1.1.0
