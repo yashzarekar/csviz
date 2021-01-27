@@ -30,12 +30,5 @@ scipy==1.5.2
 tornado==6.0.4
 widgetsnbextension==3.5.1
 certifi==2020.12.5
-libcblas==3.9.0
-libgcc-ng==9.3.0
-libgfortran-ng==9.3.0
-libgfortran5==9.3.0
-libgomp==9.3.0
-liblapack==3.9.0
-libopenblas==0.3.12
 openssl==1.1.1i
 slycot==0.4.0.0
