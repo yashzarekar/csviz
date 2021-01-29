@@ -216,6 +216,7 @@ def setup_package():
                     '-DFULL_VERSION=' + VERSION + '.git' + gitrevision[:7]],
         zip_safe=False,
         install_requires=['numpy'],
+        setup_requires=['scikit-build'],
     )
 
     try:
