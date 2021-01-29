@@ -2,6 +2,9 @@
 # $ conda create --name <env> --file <this file>
 # platform: win-64
 
+$ sudo apt install cmake
+$ sudo apt install gfortran
+$ sudo apt install libopenblas-dev
 
 control==0.8.4
 cython==0.29.21
@@ -34,5 +37,5 @@ certifi==2020.12.5
 scikit-build==0.11.1
 wheel==0.29.0
 cmake==3.18.4.post1
-mkl==2021.1.1
-slycot==0.4.0.0
+$ pip install slycot
+
