@@ -35,4 +35,5 @@ scikit-build==0.11.1
 wheel==0.29.0
 cmake==3.18.4.post1
 gcc7==0.0.9
-mkl 2021.1.1
+mkl==2021.1.1
+slycot==0.4.0.0
