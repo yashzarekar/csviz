@@ -1,5 +1,4 @@
-# csviz
-###Control Systems Visualization
+### Control Systems Visualization
 
 Click the button below to launch the binder 
 
