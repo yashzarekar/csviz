@@ -8,6 +8,4 @@ dependencies:
   - control
   - scipy
   - slycot
-  - nbgitpuller
-  
-  
+  - streamlit
