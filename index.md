@@ -6,10 +6,14 @@ This page is a guide for installing the controls package for python and getting 
 - [1 - Installing Required Packages](#Installing-Required-Packages)  
     
 - [2 - Using the Controls Toolbox](#Using-The-Controls-Toolbox)
-    - [2.1 - System Creating](#System-Creation)
+    - [2.1 - System Creation](#System-Creation)
     - [2.2 - System Conversion](#System-Conversion)
     - [2.3 - System Responses](#System-Responses)
     - [2.4 - System Analysis](#System-Analysis)
+    - [2.5 - Feedback Connection](#Feedback-Connection)
+    - [2.6 - Generating Lyapunov Matrices](#Generating-Lyapunov-Matrices)
+
+- [3 - Further Reading and Resources](#Further-Reading-and-Resources)
 
 
 <a name="Installing-Required-Packages"> </a> 
@@ -295,7 +299,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117372052-c4c01600-ae7d-11eb-9246-5a0cde99716b.png)
 
-### 2.4 Feedback Connection 
+<a name="Feedback-Connection"> </a> 
+### 2.5 Feedback Connection 
 
 Python and MATLAB offer a function to create a feedback connection between 2 systems, for example, the plant and the controller. The feedback sign is **-1** by default and assumes negative feedback unless otherwise specified as a parameter to the function call. The syntax is 
 
@@ -335,7 +340,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117372161-f20cc400-ae7d-11eb-8cde-41f9b348105c.png)
 
-### 2.5 Generating Lyapunov Matrices
+<a name="Generating-Lyapunov-Matrices"> </a>
+### 2.6 Generating Lyapunov Matrices
 
 The lyapunov stability theory is one of the most important theories to design and analyse control systems. It is used for Linear systems and heavily in the analysis and algorithm design for non-linear systems. Analogous to MATLAB, python has a function that solves the lyapunov equation 
 
@@ -381,6 +387,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117372263-1bc5eb00-ae7e-11eb-988f-4d56b56bab69.png)
 
+<a name="Further-Reading-and-Resources"> </a>
 ## 3 - Further Reading and Resources
 
 Further function references can be found at the [link]( https://python-control.readthedocs.io/en/0.8.4/) (Function references) mentioned above. Some notable functions are **minreal(), lqr(), place(), tfdata()** to name a few. 
