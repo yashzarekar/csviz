@@ -57,3 +57,33 @@ import matplotlib.pyplot as plt
 import warnings #Hide warning regarding imaginary plots - NOT RECOMMENDED for normal use
 warnings.filterwarnings('ignore')
 ```
+
+**Points to Remember**
+
+- The array indexing in Python starts from **0** as opposed to 1 in MATLAB
+- Array elements are accessed using square brackets ***[]*** as opposed to parentheses **()**
+- Array elements need to be separated by a comma. E.g. array = np.array([1,2,3])
+- Matrices are nested arrays and the first element in a 2-D Array would be an array itself. E.g: matrix = np.array([[1,2],[3,4]])
+- While using a function defined in an imported package, use the package name or the assigned variable when calling the function. E.g: numpy.array or np.array, control.ss or co.ss as defined
+
+### 2.1 System Creation 
+
+To create a system, the functions **ss** and **tf** can be used to create a state space or a transfer function system, respectively. An example is illustrated below.
+> **ss(A,B,C,D)** - Create a state space system  
+> **tf(num,den)** - Create a transfer function system
+
+```python
+#Creating a transfer function system
+
+num = [1,2] # Numerator co-efficients
+den = [1,2,3] # Denominator co-efficients
+
+sys_tf = co.tf(num,den)
+print(sys_tf)
+```
+
+The output is the following:
+
+s+2
+-------------
+s^2 + 2 s + 3
