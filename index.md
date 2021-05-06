@@ -82,7 +82,7 @@ sys_tf = co.tf(num,den)
 print(sys_tf)
 ```
 
-The output is the following:
+Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117370557-68f48d80-ae7b-11eb-89d2-c1d9eaa73ef1.png)
 
@@ -98,7 +98,7 @@ D = np.array([0])
 sys_ss = co.ss(A,B,C,D)
 print(sys_ss)
 ```
-The output is the following:
+Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117370935-f46e1e80-ae7b-11eb-831e-a78175282f3f.png)
 
@@ -113,7 +113,55 @@ This section shows how to convert system from one type to another, i.e., from st
 sys_ss2 = co.tf2ss(sys_tf)
 print(sys_ss2)
 ```
-The output is the following:
+Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117371094-313a1580-ae7c-11eb-80b3-a70afd926961.png)
+
+```python
+sys_tf2 = co.ss2tf(sys_ss)
+print(sys_tf2)
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371227-60e91d80-ae7c-11eb-96f4-5f0ca5abb510.png)
+
+### 2.3 System Responses
+
+This section covers generation of some system responses to desired inputs, namely:
+- Step Response  
+- Forced Response  
+- Initial Response  
+- Impulse Response
+
+#### 2.3.1 Step Response
+
+Generates system response to step input. Step response generation is very similar to that in MATLAB, with the only difference being figure creation. MATLAB automatically plots the data. In Python, the data is stored in variables which are then plotted using the plot() function. The syntax is:
+> T, yout = step_response(sys [, T, X0]) - parametes in [] are optional
+
+See the example below. 
+
+```python
+t0 = 0 # Initial Time 
+tf = 5 # Final Time
+dt = 0.1 # Time step
+
+T = np.arange(t0,tf,dt) #Create Time array. This step is not necessary. step function automatically generates time vector. see line 8
+
+T,yout = co.step_response(sys_ss,T)
+# T, yout = co.step_response(sys_ss) # Use this command without a time vector
+
+# Plot the response
+plt.figure(1,figsize = (6,4))
+plt.plot(T,yout)
+
+plt.grid(True)
+plt.ylabel("y")
+plt.xlabel("Time (sec)")
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371406-b0c7e480-ae7c-11eb-948f-8106cbab5f42.png)
+
+
+
 
