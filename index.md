@@ -162,6 +162,101 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117371406-b0c7e480-ae7c-11eb-948f-8106cbab5f42.png)
 
+#### 2.3.2 Forced Response
+
+This function is used to generate the response of a linear system to a given input U (U = 0 by default). This is similar to lsim() in MATLAB. The syntax is 
+> T, yout, xout = forced_response(sys[, T, U, X0,]) - parameters in [] are optional
+
+See example below.
+
+```python
+u1 = np.full((1,len(T)),2) #Create an array of 2's, equal to 2*step
+u2 = np.sin(T) 
+
+T,yout_u1,xout_u1 = co.forced_response(sys_ss,T,u1) # Response to input 1
+T,yout_u2,xout_u2 = co.forced_response(sys_ss,T,u2) # Response to input 2
+
+plt.figure(2,figsize = (6,4))
+
+plt.plot(T,yout_u1)
+plt.plot(T,yout_u2)
+
+plt.grid()
+plt.xlabel("Time (sec)")
+plt.ylabel("y")
+plt.legend(["Input 1","Input 2 (sin)"])
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371551-ef5d9f00-ae7c-11eb-94fa-d72cf196fc11.png)
+
+#### 2.3.3 Impulse Response
+
+This function generates the system response to an impulse. It is similar to the impulse() function in MATLAB. The syntax is
+> T, yout = impulse_response(sys[, T, X0, input, …])
+
+See the example below.
+
+```python
+T, yout_imp = co.impulse_response(sys_ss) #Generate Impulse Response
+
+plt.figure(3,figsize = (6,4)) # Create new figure and plot
+plt.plot(T,yout_imp)
+
+plt.grid()
+plt.xlabel("Time (sec)")
+plt.ylabel("y")
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371596-000e1500-ae7d-11eb-8171-6c231b4a73bb.png)
+
+#### 2.3.4 Response to Initial Conditions
+
+The function generates system response to a given initial condition. This is similar to initial() function in MATLAB. The syntax is 
+> T, yout = initial_response(sys[, T, X0, input, …])
+
+It is required to specify the initial condition in an X0 vector. Otherwise, it is assumed to be zero.
+
+See example below.
+
+```python
+X0 = [[6],[1]]
+T, yout_init = co.initial_response(sys_ss,X0 = X0) # Generate initial Response and X0 is a parameter defined in function call assigned to the X0 vector created
+
+plt.figure(4,figsize = (6,4)) # Create new figure and plot
+plt.plot(T,yout_init)
+
+plt.grid()
+plt.xlabel("Time (sec)")
+plt.ylabel("y")
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371633-1320e500-ae7d-11eb-9bb9-8fb510e43553.png)
+
+### 2.4 Control System Analysis
+
+The following functions help with obtaining important analysis data that are used frequently. This data helps in predicting the system behavior and showcase important system characteristics such as poles, zeros, dcgain, root_locus, etc. Only some basic functions are included in this guide. The full list can be found in the link under section 2. 
+
+**Analysis Functions**
+
+| Syntax                       | Description                                                          |
+| :------                      | :--------------------------------                                    |
+| k = dcgain(sys)              | Return the zero-frequency (or DC) gain of the given system           | 
+| gm, pm, wg, wp = margin(sys) | Calculate gain and phase margins and associated crossover frequencies|
+| poles = pole(sys)            | Compute system poles                                                 |
+| zeros = zero(sys)            | Compute system zeros                                                 |
+| pzmap(sys)                   | Plot a pole-zero map                                                 |
+| root_locus(sys)              | Root-locus plot                                                      |
+
+See examples of the functions below.
+
+
+
+
+
+
 
 
 
