@@ -83,7 +83,5 @@ print(sys_tf)
 ```
 
 The output is the following:
+![image](https://user-images.githubusercontent.com/78013763/117370557-68f48d80-ae7b-11eb-89d2-c1d9eaa73ef1.png)
 
-s+2
--------------
-s^2 + 2 s + 3
