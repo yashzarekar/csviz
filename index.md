@@ -17,11 +17,12 @@ This page is a guide for installing the controls package for python and getting 
 
 ## MyBinder Links
 
+### Launch Binder
 Click the button below to launch the binder repository of Jupyter Notebooks
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main)
 
-## Individual Modules
+### Individual Modules
 [Inverted Pendulum-Cart Control](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main?filepath=Notebooks%2FInverted_Pendulum_Control_Demo.ipynb)
 
 [Inverted Pendulum-Cart Pole Placement](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main?filepath=Notebooks%2FInverted_Pendulum_Pole_Placement.ipynb)
