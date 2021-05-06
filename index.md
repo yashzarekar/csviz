@@ -37,7 +37,7 @@ In the Anaconda app, go to environments and click the arrow next to your desired
 Type and enter "y" in the command prompt for slycot installation. See the picture below for steps to open the terminal: 
 
 
-![image.png](attachment:image.png)
+![image](https://user-images.githubusercontent.com/78013763/117369733-2f6f5280-ae7a-11eb-8f10-c432b331e14f.png)
 
 <a name="Heading-2"> </a> 
 ## 2 - Using the Controls Toolbox
