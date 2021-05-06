@@ -16,8 +16,6 @@ This page is a guide for installing the controls package for python and getting 
 - [3 - Further Reading and Resources](#Further-Reading-and-Resources)
 
 ## MyBinder Links
-
-### Launch Binder
 Click the button below to launch the binder repository of Jupyter Notebooks
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main)
