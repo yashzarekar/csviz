@@ -15,9 +15,18 @@ This page is a guide for installing the controls package for python and getting 
 
 - [3 - Further Reading and Resources](#Further-Reading-and-Resources)
 
+## MyBinder Links
+
 Click the button below to launch the binder repository of Jupyter Notebooks
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main)
+
+## Individual Modules
+[Inverted Pendulum-Cart Control](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main?filepath=Notebooks%2FInverted_Pendulum_Control_Demo.ipynb)
+
+[Inverted Pendulum-Cart Pole Placement](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main?filepath=Notebooks%2FInverted_Pendulum_Pole_Placement.ipynb)
+
+[Transition from MATLAB to Python Controls Package](https://mybinder.org/v2/gh/macs-lab/Python-Controls-Visualization/main?filepath=Notebooks%2FMatlab-to-Python.ipynb)
 
 <a name="Installing-Required-Packages"> </a> 
 ## 1 - Installing Required Packages
