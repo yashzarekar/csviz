@@ -114,5 +114,6 @@ sys_ss2 = co.tf2ss(sys_tf)
 print(sys_ss2)
 ```
 The output is the following:
+
 ![image](https://user-images.githubusercontent.com/78013763/117371094-313a1580-ae7c-11eb-80b3-a70afd926961.png)
 
