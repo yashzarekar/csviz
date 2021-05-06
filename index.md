@@ -6,6 +6,10 @@ This page is a guide for installing the controls package for python and getting 
 - [1 - Installing Required Packages](#Installing-Required-Packages)  
     
 - [2 - Using the Controls Toolbox](#Using-The-Controls-Toolbox)
+    - [2.1 - System Creating](#System-Creation)
+    - [2.2 - System Conversion](#System-Conversion)
+    - [2.3 - System Responses](#System-Responses)
+    - [2.4 - System Analysis](#System-Analysis)
 
 
 <a name="Installing-Required-Packages"> </a> 
@@ -66,6 +70,7 @@ warnings.filterwarnings('ignore')
 - Matrices are nested arrays and the first element in a 2-D Array would be an array itself. E.g: matrix = np.array([[1,2],[3,4]])
 - While using a function defined in an imported package, use the package name or the assigned variable when calling the function. E.g: numpy.array or np.array, control.ss or co.ss as defined
 
+<a name="System-Creation"> </a> 
 ### 2.1 System Creation 
 
 To create a system, the functions **ss** and **tf** can be used to create a state space or a transfer function system, respectively. An example is illustrated below.
@@ -102,6 +107,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117370935-f46e1e80-ae7b-11eb-831e-a78175282f3f.png)
 
+<a name="System-Conversion"> </a> 
 ### 2.2 System Conversion 
 
 This section shows how to convert system from one type to another, i.e., from state-space to transfer function and vice-versa. Similar to MATLAB, the commands used are 
@@ -125,6 +131,7 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117371227-60e91d80-ae7c-11eb-96f4-5f0ca5abb510.png)
 
+<a name="System-Responses"> </a> 
 ### 2.3 System Responses
 
 This section covers generation of some system responses to desired inputs, namely:
@@ -235,7 +242,8 @@ Output:
 
 ![image](https://user-images.githubusercontent.com/78013763/117371633-1320e500-ae7d-11eb-9bb9-8fb510e43553.png)
 
-### 2.4 Control System Analysis
+<a name="System-Analysis"> </a> 
+### 2.4 System Analysis
 
 The following functions help with obtaining important analysis data that are used frequently. This data helps in predicting the system behavior and showcase important system characteristics such as poles, zeros, dcgain, root_locus, etc. Only some basic functions are included in this guide. The full list can be found in the link under section 2. 
 
