@@ -252,6 +252,137 @@ The following functions help with obtaining important analysis data that are use
 
 See examples of the functions below.
 
+```python
+# DC Gain
+k = co.dcgain(sys_ss)
+print('DC gain = ', k)
+
+# Margins
+gm, pm, wg, wp = co.margin(sys_ss)
+print('\nGain Margin = ', gm, '\nPhase Margin = ',pm)
+
+# Poles and Zeros
+poles = co.pole(sys_ss)
+zeros = co.zero(sys_ss)
+print('\nSystem Poles = ', poles, '\nSystem Zeros = ', zeros)
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371741-3f3c6600-ae7d-11eb-92b5-7aea0686fd29.png)
+
+```python
+# pole-zero map
+plt.figure(5,figsize = (6,4))
+plt.grid(True)
+co.pzmap(sys_ss)
+
+# Root-locus
+plt.figure(6,figsize = (6,4))
+plt.grid(True)
+co.root_locus(sys_ss);
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117371919-8f1b2d00-ae7d-11eb-9f3a-65cc45046223.png)
+
+![image](https://user-images.githubusercontent.com/78013763/117372052-c4c01600-ae7d-11eb-9246-5a0cde99716b.png)
+
+### 2.4 Feedback Connection 
+
+Python and MATLAB offer a function to create a feedback connection between 2 systems, for example, the plant and the controller. The feedback sign is **-1** by default and assumes negative feedback unless otherwise specified as a parameter to the function call. The syntax is 
+
+> sys_fb = feedback(sys1,sys2, sign = -1) - sign parameter is optional. it is -1 by default
+
+see example below for an unstable system stabilized through feedback
+
+```python
+# Creating and plotting step response of an unstable system
+
+sys_unstable = co.tf(np.array([1,2]),np.array([1,2,-3]))
+t_unst,y_unst = co.step_response(sys_unstable)
+
+plt.figure(7,figsize = (6,4))
+plt.grid(True)
+plt.title("Unstable Step response")
+plt.plot(t_unst,y_unst)
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117372124-e4efd500-ae7d-11eb-86f5-5b8605117b8d.png)
+
+```python
+# Creating a simple feedback controller C = 2 to stabilize system and connecting the plant and controller using feedback
+
+controller = co.tf(np.array([2]),np.array([1]))
+sys_st = co.feedback(sys_unstable,controller)
+
+t_st,y_st = co.step_response(sys_st) #Step Response
+
+plt.figure(8,figsize = (6,4))
+plt.grid(True)
+plt.plot(t_st,y_st)
+plt.title("Stabilized Reseponse")
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117372161-f20cc400-ae7d-11eb-8cde-41f9b348105c.png)
+
+### 2.5 Generating Lyapunov Matrices
+
+The lyapunov stability theory is one of the most important theories to design and analyse control systems. It is used for Linear systems and heavily in the analysis and algorithm design for non-linear systems. Analogous to MATLAB, python has a function that solves the lyapunov equation 
+
+$$ A^T P + PA^T = -Q $$
+
+The syntax, similar to MATLAB, is 
+> Q = lyap(A,P)
+
+See example below.
+
+```python
+P = np.eye(2) # Generating 2x2 identity matrix
+
+Q = co.lyap(A,P) # Solving Lyap equation
+print('Q = \n', Q)
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117372214-0781ee00-ae7e-11eb-8a07-dddf733f3431.png)
+
+### 2.6 Controllability and Observability Matrix 
+
+The controllability/observability matrix can be computed easily with a single command to check the rank of the output matrix and determine whether the system is controllable/observable. The syntax follows 
+
+> ctrb = ctrb(A,B) - returns the controllability matrix  
+> obsv = obsv(A,B) - returns the observability matrix
+
+The rank of the matrices can be checked using the numpy function numpy.linalg.matrix_rank() which is similar to the rank() function in MATLAB.
+
+```python
+# Controllability Matrix
+ctrb = co.ctrb(A,B)
+print('Controllability Matrix = \n', ctrb)
+print('Controllability Matrix Rank = ', np.linalg.matrix_rank(ctrb))
+# np.linalg.matrix_rank(co.ctrb(A,B)) # using a single line
+
+obsv = co.obsv(A,C)
+print('\nObservability Matrix = \n', obsv)
+print('Observability Matrix Rank = ', np.linalg.matrix_rank(obsv)) 
+# np.linalg.matrix_rank(co.obsv(A,C)) # using a single line
+```
+Output:
+
+![image](https://user-images.githubusercontent.com/78013763/117372263-1bc5eb00-ae7e-11eb-988f-4d56b56bab69.png)
+
+## 3 - Further Reading and Resources
+
+Further function references can be found at the [link]( https://python-control.readthedocs.io/en/0.8.4/) (Function references) mentioned above. Some notable functions are **minreal(), lqr(), place(), tfdata()** to name a few. 
+
+Using Jupyter notebook helps integrating text and code in a same file that allows easy reading while preserving continuity of your typeset assignments. Jupyter notebook uses **Markdown** for the text cells and an easy-to-follow [Markdown Guide](https://www.markdownguide.org/basic-syntax/) is available online. 
+
+For equations, Markdown uses LaTeX syntax which is recognized in jupyter notebook and is available at this [Link](https://www.math.ubc.ca/~pwalls/math-python/jupyter/latex/).
+
+
+
 
 
 
